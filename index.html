@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github API</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        input[type=text] {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body class="bg-dark">
+    <!-- https://api.github.com/users/tayfunuludogan -->
+
+    <div class="container mt-2">
+
+        <div class="card" style="height:auto">
+            <div class="card-header">
+                <h4 class="h3"><strong>Github Search Users</strong></h4>
+            </div>
+            <div class="card-body" id="firstCB">
+
+                <form id="searchForm">
+                    <div class="form-row align-items-center">
+                        <div class="col-md-10">
+                            <input type="text" name="" id="tbxSearch" class="form-control"
+                                placeholder="Insert a Github User Name..." required>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-dark btn-block" id="btnSearch" type="submit">Search</button>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="card-title d-flex justify-content-between">
+                        <h4>Last Searched </h4>
+                        <button type="button" id="btnClearUsers" class="btn btn-danger">Clear Searched Users</button>
+                    </div>
+
+                    <section id="searchedUsers" style="font-size: 1.1rem;">
+                        
+                       <!-- Searched Users -->
+                        <!-- <span type="button" class="badge badge-dark">
+                            tayfunuludogan <i class="fa fa-remove"></i>
+                        </span>
+                        <span type="button" class="badge badge-dark">
+                            alpsakaci <i class="fa fa-remove"></i>
+                        </span>
+                        <span type="button" class="badge badge-dark">
+                            ademcoban <i class="fa fa-remove"></i>
+                        </span> -->
+
+                    </section>
+                    <hr>
+                </form>
+
+
+
+            </div>
+
+
+
+        </div>
+
+        <section id="userInfo">
+            <!-- <div class="card card-body mt-2">
+                <div class="row d-flex">
+                    <div class="card-img-top col-md-3 text-center mb-3">
+                        <a id="profileLink" href="https://github.com/tayfunuludogan">
+                            <img id="profilePicture" class="img-thumbnail"
+                                src="https://avatars3.githubusercontent.com/u/58271284?v=4" alt="" srcset=""
+                                style="width: 13rem;">
+                        </a>
+                        <hr>
+                        <h5>Tayfun Uludoğan</h4>
+                            <span class="text-muted">Yazar</span>
+                    </div>
+
+                    <div class="col-md-9">
+
+                        <button type="button" class="btn btn-dark">
+                            Followers <span class="badge badge-light">422</span>
+                        </button>
+                        <button class="btn btn-info" type="button">
+                            Following <span class="badge badge-light">220</span>
+                        </button>
+                        <button class="btn btn-danger">
+                            Stars <span class="badge badge-light">5</span>
+                        </button>
+
+
+                        <div class="mt-3">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <img src="images/mail.png" width="30px" alt="">
+                                    <span>E-Mail</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <img src="images/location.png" width="30px" alt="">
+                                    <span>Location</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <img src="images/company.png" width="30px" alt="">
+                                    <span>Company</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <img src="images/twitter.png" width="30px" alt="">
+                                    <span>Twitter</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+
+        </section>
+
+        <section id="userRepos" style="visibility: hidden;">
+            <div class="card card-body mt-2">
+                <h3 class="card-title">Repos</h3>
+
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Stars</th>
+                            <th>Forks</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblRepos">
+                        <!-- <tr>
+                            <td><a href="" style="font-size: 1.2rem;">Currency</a> </td>
+                            <td><span class="btn btn-success">2</span></span>
+                                </button></td>
+                            <td><span class="btn btn-info">5</span>
+                                </button></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+
+            </div>
+        </section>
+    </div>
+
+
+    <script src="Services/GithubDal.js"></script>
+    <script src="Services/StorageServices.js"></script>
+    <script src="Services/UIManager.js"></script>
+    <script src="Services/Main.js"></script>
+</body>
+
+</html>
