@@ -74,7 +74,7 @@ class UIManager {
         
         <tr>
              <td>
-                <a href="${repo.html_url}" style="font-size: 1.2rem;">${repo.name}</a>
+                <a href="${repo.html_url}" target="_blank" style="font-size: 1.2rem;">${repo.name}</a>
             </td>
             <td>
                 <span class="btn btn-success">${repo.stargazers_count}</span>
