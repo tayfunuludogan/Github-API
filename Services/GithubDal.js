@@ -6,7 +6,7 @@ class GithubDal{
     
     async GetUserInfo(userName){
         const response = await fetch(this.endpoint+`/${userName}`);
-        const data = response.json();
+        const data = await response.json();
         return data;
     }
 
